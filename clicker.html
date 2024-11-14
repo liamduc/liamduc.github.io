@@ -12,24 +12,82 @@
         #point{
           text-align: center;
         }
+        #points{
+          text-align: center;
+        }
+        #pointy{
+          text-align: center;
+        }
+        #explain{
+          text-align: center;
+        }
+        #ac1{
+          text-align: center;
+        }
         </style>      
 </head>
 <body> 
     <img src="https://silverfallsseed.com/wp-content/uploads/2016/01/Red-Poppy-tower-2017-51-e1683918877760.jpg" id="poppy">
       
         <p id="point"> score: 0 </p>
+        <p id="explain"> ptc = Points for click, ac = auto clicker
+        <p id="points"> upgrade ptp = +10 :100 </p>
+        <p id="pointy"> upgrade ptp = +100  :10000 </p>
+        <p id="ac1"> get at 2 per second :10</p>
 </body>
 </html> 
 
 <script>
    var score= 0;
+   var upgrade = 1;
+   var advance = 100;
+   var advance2 = 10000;
+   var advance3 = 10
+   var nice = 100000000000000000
+   var finish = 0
 function up(){
-  score = score + 1
+  score = score + upgrade
   document.getElementById("point").innerHTML = "score: " + score
 console.log(score)
 }
 document.getElementById("poppy").addEventListener("click",up)
 
+function up2(){
+  if(score>advance){
+  score = score - advance
+  upgrade = upgrade + 9
+  advance = advance + 1000
+  document.getElementById("point").innerHTML = "score: " + score
+  document.getElementById("points").innerHTML = "upgrade :" + advance 
+}
+}
+document.getElementById("points").addEventListener("click",up2) 
 
-  
+function up3(){
+  if (score>advance2){
+    score = score - advance2
+    upgrade = upgrade + 100
+    advance2 = advance2 + 15000
+    document.getElementById("point").innerHTML = "score: " + score
+    document.getElementById("pointy").innerHTML = "upgrade :" + advance2
+  }
+}
+document.getElementById("pointy").addEventListener("click",up3)
+
+function auto(){
+  score = score + finish
+  document.getElementById("point").innerHTML = "score: " + score 
+}
+
+function autoc(){
+  if(score>advance3){
+    score = score - advance3
+    finish = finish + 1
+    nice = 2000
+    advance3 = advance3 + 
+    document.getElementById("ac1").innerHTML = "price: " + advance3
+    setInterval(auto,nice)
+  }
+}
+document.getElementById("ac1").addEventListener("click",autoc)
 </script>
