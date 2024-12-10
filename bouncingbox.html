@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+#width{width: 100px;
+height: 100px;
+background-color: red;
+position: absolute;
+top: x;
+left: x;
+
+}
+
+</style>
+</head>
+<body>
+    <div id="width">
+      
+    </div>
+</body>
+</html>
+<script>
+   var left = 5 
+   var leftc = 3
+   var upc = 4
+   var upe = 5
+   var d = 50
+   document.getElementById("width").addEventListener("click",up)
+    function up(){
+    left = left + leftc
+      document.getElementById("width").style.left = left + "px"
+    upe = upe + upc 
+    document.getElementById("width").style.top = upe + "px"
+    if (left > 1870){
+    leftc = leftc * -1
+    }
+    if (left < 0){
+    leftc = leftc * -1
+    }
+    if (upe < 0)
+     upc = upc * -1
+    if (upe > 920)
+    upc = upc * -1
+    }
+ document.getElementById("width").addEventListener("click",boo)
+ function boo(){
+    leftc=leftc*2
+    upc=upc*2
+ }
+    setInterval(up, 5)
+  </script>

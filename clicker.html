@@ -38,17 +38,17 @@
 </html> 
 
 <script>
-   var score= 0;
+   var score = 0;
    var upgrade = 1;
    var advance = 100;
    var advance2 = 10000;
-   var advance3 = 10
-   var nice = 100000000000000000
-   var finish = 0
+   var advance3 = 10;
+   var nice = 100000000000000000;
+   var finish = 0;
+
 function up(){
   score = score + upgrade
   document.getElementById("point").innerHTML = "score: " + score
-console.log(score)
 }
 document.getElementById("poppy").addEventListener("click",up)
 
@@ -83,10 +83,11 @@ function autoc(){
   if(score>advance3){
     score = score - advance3
     finish = finish + 1
-    nice = 2000
-    advance3 = advance3 + 
+    nice = 500
+    advance3 = advance3 + 1000
     document.getElementById("ac1").innerHTML = "price: " + advance3
     setInterval(auto,nice)
+    document.getElementById("point").innerHTML = "score: " + score
   }
 }
 document.getElementById("ac1").addEventListener("click",autoc)
